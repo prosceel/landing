@@ -1,5 +1,5 @@
 .contacts {
-  padding: 148px 0;
+  padding: 148px 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -31,36 +31,55 @@
     color: $white;
     font-size: 38px;
     margin: 0;
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
   }
 
   &__text {
     color: $white;
     font-size: 18px;
     margin: 3px 0 0;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 
   &__form {
     margin-top: 63px;
     margin-bottom: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 26px;
+    width: 100%;
+    justify-content: center;
+
+    @media (max-width: 390px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__form-item {
     @include box-shadow-focus(transparent, $white);
 
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     border: 1px solid $white;
     background-color: transparent;
     height: 45px;
-    margin-right: 26px;
     box-sizing: border-box;
     padding: 0 10px;
-
-    &:last-child {
-      margin: 0;
-    }
 
     &::placeholder {
       color: $white;
     }
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
