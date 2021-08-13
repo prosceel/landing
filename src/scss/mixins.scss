@@ -1,0 +1,15 @@
+@mixin box-shadow-focus($color, $second-color, $focus-opacity: 0.5, $focus-border: 3px) {
+  border: 2px solid $second-color;
+  transition: 300ms all ease-in-out;
+
+  &:hover,
+  &:focus {
+    background: $color;
+    color: $second-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 #{$focus-border} rgba($second-color, $focus-opacity);
+  }
+}

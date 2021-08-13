@@ -27,11 +27,22 @@
 }
 
 .generic-button {
+  @include box-shadow-focus(transparent, $pomegranate);
+
   background-color: $pomegranate;
-  border: none;
   color: $white;
   height: 40px;
   padding: 0 23px;
   text-align: center;
   font-size: 13px;
+
+  &:hover, &:focus {
+    cursor: pointer;
+  }
+
+  &--is-form {
+    align-self: center;
+    margin-top: 20px;
+    border-radius: 3px;
+  }
 }

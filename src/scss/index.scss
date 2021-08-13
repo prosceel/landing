@@ -9,6 +9,7 @@ $container-max-widths: (
 @import "~bootstrap/scss/bootstrap.scss";
 
 @import "/src/scss/constants";
+@import "/src/scss/mixins";
 @import "/src/scss/components";
 @import "/src/scss/creterion";
 @import "/src/scss/reviews";
