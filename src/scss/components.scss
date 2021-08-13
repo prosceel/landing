@@ -6,6 +6,7 @@
   align-items: center;
   flex-flow: column;
   font-size: 28px;
+  text-align: center;
 
   &::after {
     position: absolute;
@@ -36,7 +37,8 @@
   text-align: center;
   font-size: 13px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     cursor: pointer;
   }
 
