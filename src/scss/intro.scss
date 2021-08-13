@@ -5,7 +5,7 @@
   padding-bottom: 165px;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
@@ -103,6 +103,117 @@
     span {
       background: $pomegranate;
       padding: 2px 5px;
+    }
+  }
+
+  &__timer {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+
+    $scale: 2;
+    $font-height: 30px / $scale;
+    $font-size: 16px / $scale;
+    $digit-width: 50px / $scale;
+    $digit-height: 80px / $scale;
+    $digit-font-size: 4rem / $scale;
+    $border: 4px / $scale;
+
+    &.flipdown {
+      height: 110px / $scale;
+
+      .rotor {
+        width: $digit-width;
+        height: $digit-height;
+        font-size: $digit-font-size;
+
+        &:after {
+          width: $digit-width;
+          height: $digit-height / 2;
+          border-radius: 0 0 $border $border;
+        }
+      }
+
+      .rotor-group {
+        padding-right: $font-height;
+
+        &:not(:last-of-type) {
+          .rotor-group-heading {
+            left: calc(50% - (#{$font-height} / 2));
+          }
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        &:nth-child(n + 2):nth-child(-n + 3) {
+          &::before,
+          &::after {
+            left: auto;
+            width: 10px / $scale;
+            height: 10px / $scale;
+            background-color: $white;
+
+            right: ($font-height - (10px / $scale)) / 2;
+          }
+
+          &::before {
+            top: 20px / $scale;
+          }
+
+          &::after {
+            top: 50px / $scale;
+          }
+        }
+      }
+
+      .rotor-group-heading {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::before {
+          height: $font-height;
+          line-height: $font-height;
+          font-size: $font-size;
+          color: $white;
+        }
+      }
+
+      .rotor-leaf {
+        width: $digit-width;
+        height: $digit-height;
+      }
+
+      .rotor-leaf-rear {
+        width: $digit-width;
+        height: $digit-height / 2;
+        line-height: 0;
+        border-radius: 0 0 $border $border;
+      }
+
+      .rotor-leaf-front {
+        width: $digit-width;
+        height: $digit-height / 2;
+        line-height: $digit-height;
+        border-radius: $border $border 0 0;
+      }
+
+      .rotor-top {
+        width: $digit-width;
+        height: $digit-height;
+        line-height: $digit-height;
+        border-radius: $border $border 0 0;
+      }
+
+      .rotor-bottom {
+        width: $digit-width;
+        height: $digit-height / 2;
+        border-radius: 0 0 $border $border;
+      }
     }
   }
 }
