@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", () => {
-  new FlipDown(1642225766, "timer").start();
+  new FlipDown(1646525796, "timer").start();
 });
